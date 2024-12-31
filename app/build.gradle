@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'org.lucheshidi.bluethooth.leds'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "org.lucheshidi.bluethooth.leds"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // 蓝牙功能相关库
+    implementation 'no.nordicsemi.android:ble:2.6.1'
+
+    // 图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //AndroidX 版本的GridLayout
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+}
